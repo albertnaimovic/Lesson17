@@ -102,13 +102,16 @@ class Family:
         self.father_age = father_age
 
     def family_data(self) -> dict:
-        family_dictionary: dict = {
-            self.sister_name: self.sister_age,
-            self.brother_name: self.brother_age,
-            self.mother_name: self.mother_age,
-            self.father_name: self.father_age,
-        }
-        return family_dictionary
+        try:
+            family_dictionary: dict = {
+                self.sister_name: self.sister_age,
+                self.brother_name: self.brother_age,
+                self.mother_name: self.mother_age,
+                self.father_name: self.father_age,
+            }
+            return family_dictionary
+        except Exception as err:
+            print(f"You got {err} error!")
 
     def age_sum(self) -> int:
         return self.sister_age + self.brother_age + self.mother_age + self.father_age
